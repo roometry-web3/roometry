@@ -17,6 +17,9 @@
 
 <link href="style.css" rel="stylesheet"/>
 
+<!-- اضافه کردن اسکریپت Google reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	
 <script type="application/ld+json">
 {
   "@context": "https://schema.org/",
@@ -82,6 +85,17 @@
 
 </head>
 <body>
+
+  <!-- مودال کپچا -->
+  <div id="captchaModal" class="modal">
+    <div class="modal-content captcha-modal-content">
+      <h2>Please confirm that you are not a robot.</h2>
+      <!-- ویجت کپچا -->
+      <div class="g-recaptcha" data-sitekey="6LcZZVErAAAAAOswfhNIiLbXW4BG25objPqtgkqs" data-callback="onCaptchaSuccess"></div>
+      <p style="margin-top: 1rem; color: #ccc;">Please complete the captcha to continue.</p>
+    </div>
+  </div>
+	
 <div id="stars-bg"></div>
 <div class="main-content">
 <header>
