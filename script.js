@@ -1,9 +1,23 @@
-
 window.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => {
-    const loader = document.querySelector('.loader');
-    if (loader) loader.classList.add('hide-loader');
-  }, 3000);
+  // نمایش مودال کپچا هنگام لود صفحه
+  const captchaModal = document.getElementById('captchaModal');
+  if (captchaModal) {
+    captchaModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // غیرفعال کردن اسکرول
+  }
+  
+  // تابع callback برای موفقیت کپچا
+function onCaptchaSuccess(response) {
+  if (response) {
+    const captchaModal = document.getElementById('captchaModal');
+    const mainContent = document.querySelector('.main-content');
+    if (captchaModal && mainContent) {
+      captchaModal.style.display = 'none';
+      mainContent.style.opacity = '1';
+      document.body.style.overflow = ''; // فعال کردن دوباره اسکرول
+    }
+  }
+}
 
   const mainContent = document.querySelector('.main-content');
   if (mainContent) mainContent.style.opacity = '1';
