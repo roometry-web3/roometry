@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="description" content="Roometry is a unique NFT collection of isometric rooms. Each room is a digital artwork that tells a story. Discover and collect immersive digital spaces.">
+<meta name="keywords" content="NFT, NFT collection, isometric art, Roometry, digital rooms, OpenSea, crypto art , polygon">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<title>Roometry</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link rel="icon" href="https://i.postimg.cc/XJqpkBJ4/Untitled-design-3.png" type="image/png">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js"></script>
+<!-- AOS CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<link href="style.css" rel="stylesheet"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Dark Haven - Roometry NFT",
+  "image": "https://i2.seadn.io/polygon/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/76e865be3251c95758a4c97943bfbe/3c76e865be3251c95758a4c97943bfbe.jpeg?w=1000",
+  "description": "A shadowy isometric room with digital gloom from Roometry.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Roometry"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "0.18",
+    "availability": "https://schema.org/InStock",
+    "url": "https://opensea.io/assets/matic/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/33"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Mystic Chamber - Roometry NFT",
+  "image": "https://i2.seadn.io/polygon/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/8fdda15aa07342ad8b4ee8438f9c86/128fdda15aa07342ad8b4ee8438f9c86.jpeg?w=1000",
+  "description": "An enigmatic room filled with ethereal light and mystery.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Roometry"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "0.18",
+    "availability": "https://schema.org/InStock",
+    "url": "https://opensea.io/assets/matic/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/33"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Echoing Void - Roometry NFT",
+  "image": "https://i2.seadn.io/polygon/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/6ce9f180d7e2e3c78b0daf94703ae6/926ce9f180d7e2e3c78b0daf94703ae6.jpeg?w=1000",
+  "description": "A vast, empty isometric room resonating with digital echoes.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Roometry"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "0.18",
+    "availability": "https://schema.org/InStock",
+    "url": "https://opensea.io/assets/matic/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/33"
+  }
+}
+</script>
+
+</head>
+<body>
+<div id="stars-bg"></div>
+<div class="main-content">
+<header>
+<div class="header-container">
+<div class="hamburger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<img loading="lazy" alt="Roometry Logo" class="logo-img" src="https://i.postimg.cc/XJqpkBJ4/Untitled-design-3.png"/>
+</div>
+<div class="header-actions">
+
+<nav class="mobile-menu">
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#community">Community</a></li>
+<li><a href="https://opensea.io/collection/roometry" target="_blank" rel="noopener noreferrer">OpenSea</a></li>
+<li><a href="#" onclick="openTeamModal(); return false;">Team</a></li>
+<li><a href="#" onclick="openFaqModal(); return false;">FAQ</a></li>
+    <li class="social-mobile">
+      <a href="https://x.com/roometry01" target="_blank" rel="noopener noreferrer" title="X">
+        <img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png" alt="X" style="width:24px;vertical-align:middle;"/>
+      </a>
+      <a href="https://t.me/ehsantmax" target="_blank" rel="noopener noreferrer" title="Telegram">
+        <img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram" style="width:24px;vertical-align:middle;"/>
+      </a>
+      <a href="https://discord.gg/YourServerInvite" target="_blank" rel="noopener noreferrer" title="Discord">
+        <img loading="lazy" src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" alt="Discord" style="width:24px;vertical-align:middle;"/>
+      </a>
+    </li>
+  </ul>
+</nav>
+</header>
+<section class="hero">
+  <div class="content">
+    <img src="https://i.postimg.cc/B6RBdPzv/Untitled-design-2.png" alt="Background" class="bg-image">
+    <h1 class="title">WELCOME TO ROOMETRY</h1>
+	<p class="subtitle">Where every room tells a different story</p>
+  </div>
+<a href="https://opensea.io/collection/roometry" class="button" target="_blank" rel="noopener noreferrer">Explore NFTs</a>
+</section>
+
+<div class="text-generate-effect">
+  <span>In </span><span>a </span><span>world </span><span>made </span><span>of </span><span>angles </span><span>and </span><span>light, </span><span>every </span><span>room </span><span>has </span><span>its </span><span>own </span><span>story </span><span>...</span>
+</div>
+
+<section class="new-nfts" data-aos="fade-up">
+<span class="live-dot"></span> Live Now
+<h2>New NFTs</h2>
+<div class="nft-grid">
+<div class="nft-item" data-aos="fade-up" data-aos-delay="200">
+<img loading="lazy" alt="NFT 1" src="https://i2.seadn.io/polygon/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/c8075f5734161c6a0ffbe9a0369124/82c8075f5734161c6a0ffbe9a0369124.jpeg?w=1000"/>
+<h3>Ant nest room</h3>
+<div class="price">$0.18</div>
+<a class="button buy-button" href="https://opensea.io/item/matic/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/97" target="_blank" rel="noopener noreferrer">Buy on OpenSea</a>
+</div>
+<div class="nft-item" style="--i: 2;">
+<img loading="lazy" alt="NFT 2" src="https://i2.seadn.io/polygon/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/ff26aceef220bdb30e7cf34bc9917e/62ff26aceef220bdb30e7cf34bc9917e.jpeg?w=1000"/>
+<h3>Sewing room</h3>
+<div class="price">$0.18</div>
+<a class="button buy-button" href="https://opensea.io/item/matic/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/96" target="_blank" rel="noopener noreferrer">Buy on OpenSea</a>
+</div>
+<div class="nft-item" style="--i: 3;">
+<img loading="lazy" alt="NFT 3" src="https://i2.seadn.io/polygon/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/06e64cb7ad3353b3393c6b4c1d80d2/df06e64cb7ad3353b3393c6b4c1d80d2.jpeg?w=1000"/>
+<h3>Glass room</h3>
+<div class="price">$0.18</div>
+<a class="button buy-button" href="https://opensea.io/item/matic/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/95" target="_blank" rel="noopener noreferrer">Buy on OpenSea</a>
+</div>
+</div>
+
+</section>
+<section id="about" style="padding: 60px 20px; text-align: center;">
+  <div style="max-width: 800px; margin: 0 auto; line-height: 1.8; font-size: 18px; color: white; font-family: 'Poppins', sans-serif;">
+    <h2 style="font-size: 28px; margin-bottom: 20px; font-weight: 600;">About Roometry</h2>
+    <p><strong>Welcome to ROOMETRY — where imagination takes geometric form.</strong></p>
+
+  <p>In a future shaped by fragments of memory and mystery, <strong>ETMFT</strong> brings you a collection of isometric rooms, each one a portal into a forgotten story. These aren't just NFTs — they’re curated moments frozen in time, waiting to be explored.</p>
+
+  <p>Every Roometry creation is a handcrafted digital diorama, blending pixel-perfect aesthetics with rich narrative depth. Whether it’s a cyberpunk arcade glowing in neon solitude, a wizard’s study crackling with arcane energy, or a cozy coffee shop on a rainy pixel-day — each room invites you to step inside and wonder <em>“who was here before me?”</em></p>
+
+  <p><strong>ROOMETRY is more than art.</strong><br/>It’s a universe.<br/>Built on the blockchain. Powered by creativity. Owned by you.</p>
+</div>
+</section>
+
+<section id="gallery">
+<h2 class="featured-title">Featured NFTs</h2>
+<div class="gallery" data-aos="fade-up">
+<a href="https://opensea.io/assets/matic/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/33" style="--i: 1;" target="_blank" rel="noopener noreferrer"><img loading="lazy" alt="Roometry NFT 1" src="https://i2.seadn.io/polygon/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/76e865be3251c95758a4c97943bfbe/3c76e865be3251c95758a4c97943bfbe.jpeg?w=1000"/></a>
+<a href="https://opensea.io/assets/matic/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/32" style="--i: 2;" target="_blank" rel="noopener noreferrer"><img loading="lazy" alt="Roometry NFT 2" src="https://i2.seadn.io/polygon/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/8fdda15aa07342ad8b4ee8438f9c86/128fdda15aa07342ad8b4ee8438f9c86.jpeg?w=1000"/></a>
+<a href="https://opensea.io/assets/matic/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/12" style="--i: 3;" target="_blank" rel="noopener noreferrer"><img loading="lazy" alt="Roometry NFT 3" src="https://i2.seadn.io/polygon/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/6ce9f180d7e2e3c78b0daf94703ae6/926ce9f180d7e2e3c78b0daf94703ae6.jpeg?w=1000"/></a>
+<a href="https://opensea.io/assets/matic/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/35" style="--i: 4;" target="_blank" rel="noopener noreferrer"><img loading="lazy" alt="Roometry NFT 4" src="https://i2.seadn.io/polygon/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/048ba69406b1f21891deba73bd5b00/6f048ba69406b1f21891deba73bd5b00.jpeg?w=1000"/></a>
+<a href="https://opensea.io/assets/matic/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/19" style="--i: 5;" target="_blank" rel="noopener noreferrer"><img loading="lazy" alt="Roometry NFT 5" src="https://i2.seadn.io/polygon/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/8bf4a77334ea5a8e0c8a653a4b5197/5f8bf4a77334ea5a8e0c8a653a4b5197.jpeg?w=1000"/></a>
+<a href="https://opensea.io/assets/matic/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/6" style="--i: 6;" target="_blank" rel="noopener noreferrer"><img loading="lazy" alt="Roometry NFT 6" src="https://i2.seadn.io/polygon/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/1a243a70c74c9c2fe654bb212bbcdd/fe1a243a70c74c9c2fe654bb212bbcdd.jpeg?w=1000"/></a>
+<a href="https://opensea.io/assets/matic/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/13" style="--i: 7;" target="_blank" rel="noopener noreferrer"><img loading="lazy" alt="Roometry NFT 7" src="https://i2.seadn.io/polygon/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/5c930a8911665565b2819f51d3b397/e85c930a8911665565b2819f51d3b397.jpeg?w=1000"/></a>
+<a href="https://opensea.io/assets/matic/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/20" style="--i: 8;" target="_blank" rel="noopener noreferrer"><img loading="lazy" alt="Roometry NFT 8" src="https://i2.seadn.io/polygon/0xfc1a994b3fbe87256f1f8612fb1c81aac448ba85/0f7ecd88bee41bd87c32de3938bad0/b30f7ecd88bee41bd87c32de3938bad0.jpeg?w=1000"/></a>
+</div>
+</section>
+
+<section class="about glass">
+  <h2>The Journey of Roometry</h2>
+
+  <div class="step">
+    <h3>Step 1: Dreaming in Angles</h3>
+    <p>The rooms were born. Each one a vision. A vibe. A geometry of emotion.</p>
+  </div>
+
+  <div class="step">
+    <h3>Step 2: The Gathering Begins</h3>
+    <p>First collectors enter. Rooms find their dreamers. Whispers of a hidden world begin...</p>
+  </div>
+
+  <div class="step">
+    <h3>Step 3: Unlocking the Unknown</h3>
+    <p>Interactive mysteries appear. Hidden objects. Secret messages. The rooms respond to their owners.</p>
+  </div>
+
+  <div class="step">
+    <h3>Step 4: Beyond the Room</h3>
+    <p>Expansion to virtual experiences. Perhaps a metaverse lounge. Perhaps a gallery in motion.</p>
+  </div>
+</section>
+
+<section class="community" id="community">
+<h2>Join Our Community</h2>
+<p>Connect with other Roometry enthusiasts and stay updated on the latest news and exclusive releases.</p>
+<a class="discord-button" href="https://discord.gg/YourServerInvite" target="_blank" rel="noopener noreferrer">
+<img loading="lazy" alt="Discord" class="discord-icon" src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png"/>
+    Join us on Discord
+  </a>
+</section>
+
+<section class="newsletter">
+<h2>Subscribe to Our Newsletter</h2>
+<p>Stay up to date with the latest Roometry news and the newest Roometry NFTs</p>
+<div class="newsletter-form">
+<input placeholder="Enter your email" type="email"/>
+<button onclick="alert('Newsletter subscription coming soon!')">Subscribe</button>
+</div>
+</section>
+<footer>
+<div class="footer-column">
+<h4>Roometry</h4>
+<p>Discover the elegance of digital art with Roometry NFTs.</p>
+<p>© 2025 ROOMETRY — All Rights Reserved</p>
+</div>
+<div class="footer-column">
+<h4>Quick Links</h4>
+<a href="#" onclick="document.getElementById('aboutModal').style.display='block'">About</a>
+<a href="#gallery">NFTs</a>
+<a href="https://opensea.io/collection/roometry" target="_blank" rel="noopener noreferrer">OpenSea</a>
+</div>
+<div class="footer-column">
+<h4>Legal</h4>
+<a href="#" onclick="document.getElementById('termsModal').style.display='block'">Terms &amp; Conditions</a>
+<a href="#" onclick="document.getElementById('privacyModal').style.display='block'">Privacy Policy</a>
+</div>
+<div class="footer-column">
+<h4>Social</h4>
+<div class="social-links">
+<a href="https://t.me/ehsantmax" target="_blank" rel="noopener noreferrer">
+<img loading="lazy" alt="Telegram" class="social-icon" src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png"/>
+</a>
+<a href="https://x.com/roometry01" target="_blank" rel="noopener noreferrer">
+<img loading="lazy" alt="X" class="social-icon" src="https://cdn-icons-png.flaticon.com/512/5969/5969020.png"/>
+</a>
+<a href="https://discord.gg/YourServerInvite" target="_blank" rel="noopener noreferrer">
+<img loading="lazy" alt="Discord" class="social-icon discord-icon" src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png"/>
+</a>
+</div>
+</div>
+</footer>
+<div class="modal" id="aboutModal">
+<div class="modal-content">
+<span class="close" onclick="document.getElementById('aboutModal').style.display='none'">×</span>
+<h2>About ROOMETRY</h2>
+<p>ROOMETRY is a visual NFT showcase presenting a growing and limitless collection of isometric rooms—each crafted with unique artistic vision.</p>
+<p>This evolving series is created by ETMFT, a digital artist dedicated to designing immersive spaces that spark imagination and curiosity.</p>
+<p>Unlike traditional collections with fixed themes or quantities, ROOMETRY has no predefined limit. It is an ever-expanding universe of digital rooms, where each NFT introduces a completely different mood, vibe, or concept. From minimalistic elegance to surreal complexity, ROOMETRY embraces creative freedom without stylistic boundaries.</p>
+<p>The project is still in active development, with new rooms being added regularly. Every NFT stands alone as a unique piece, but together they reflect the evolving mind of their creator ''ETMFT'' who treats each virtual space as a canvas for storytelling, emotion, and artistic experimentation.</p>
+<p>ROOMETRY is more than a collection.<br/>It’s a growing digital world. A gallery of possibilities. A journey through space reimagined.</p>
+</div>
+</div>
+<div class="modal" id="termsModal">
+<div class="modal-content">
+<span class="close" onclick="document.getElementById('termsModal').style.display='none'">×</span>
+<h2>Terms and Conditions</h2>
+<p>Last Updated: 05 May 2025</p>
+<p>Welcome to Roometry. By accessing or using our website Roometry , you agree to comply with and be bound by the following terms and conditions. If you disagree with any part of these terms, please do not use the website.</p>
+<p>1. Ownership of Content</p>
+<p>All artworks, designs, and materials presented on Roometry are original digital creations. While the NFTs may be available on external platforms, this website only serves as a visual and promotional showcase for the Roometry collection.</p>
+<p>2. User Responsibilities</p>
+<p>You agree not to misuse the website, attempt unauthorized access, or reproduce content without permission. All visitors must respect the intellectual property of the creators.</p>
+<p>3. No Transactions</p>
+<p>This website does not facilitate any direct transactions, wallet connections, or financial exchanges. All NFT purchases must occur on trusted third-party marketplaces, and Roometry is not responsible for those external processes.</p>
+<p>4. No Guarantees</p>
+<p>We make no promises regarding the future availability, value, or resale of any NFTs showcased here. This website is purely informational.</p>
+<p>5. Governing Law</p>
+<p>These terms are governed by and construed in accordance with the laws of the United States, without regard to conflict of law principles.</p>
+</div>
+</div>
+<div class="modal" id="privacyModal">
+<div class="modal-content">
+<span class="close" onclick="document.getElementById('privacyModal').style.display='none'">×</span>
+<h2>Privacy Policy</h2>
+<p>Last Updated: 05 May 2025</p>
+<p>Roometry values your privacy. This policy explains how we handle data when you visit our website.</p>
+<p>1. Data Collection</p>
+<p>We do not collect any personal information. The website may use basic analytics (e.g., number of visitors, page views) to help improve content, but no identifiable data is stored.</p>
+<p>2. Cookies</p>
+<p>We may use standard cookies for analytics or performance improvements. These cookies do not track individual users. You can disable cookies in your browser settings at any time.</p>
+<p>3. No Wallet or Payment Data</p>
+<p>We do not request or store crypto wallet addresses, payment information, or personal details. This site is read-only and does not include any blockchain interaction.</p>
+<p>4. External Links</p>
+<p>Roometry may link to external NFT platforms (e.g., OpenSea). We are not responsible for the privacy practices of those websites. Please review their policies separately.</p>
+<p>5. Security</p>
+<p>We maintain standard web security practices to ensure a safe browsing experience.</p>
+<p>6. Updates</p>
+<p>We may update this policy from time to time. Continued use of the website means you accept any changes.</p>
+</div>
+</div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+
+<script src="script.js"></script>
+
+<div class="modal" id="teamModal">
+  <div class="modal-content team-modal-content">
+    <span class="close" onclick="closeTeamModal()">&times;</span>
+    <h2>Our Team</h2>
+
+    <div class="team-member">
+      <h3>ETMFT</h3>
+	  <p>Project Manager</p>
+<p>Keeps everything on track and everyone aligned</p>
+    </div>
+
+    <div class="team-member">
+    <h3>Liam Cross</h3>
+<p>Smart Contract Developer</p>
+<p>Handles all things blockchain and minting</p>
+    </div>
+    <div class="team-member">
+    <h3>Jane Sky</h3>
+<p>UI/UX Designer</p>
+<p>Designs smooth, user-friendly interfaces</p>
+    </div>
+
+<div class="team-member">
+	  <h3>Zoey Carter</h3>
+<p>Social Media Manager</p>
+<p>Leads online presence and engagement</p>
+    </div>
+	
+	<div class="team-member">
+      <h3>Noah Reed</h3>
+<p>Web Developer</p>
+<p>Builds fast, secure, and responsive websites</p>
+    </div>
+  </div>
+</div>
+
+<div id="modal-blur"></div>
+
+
+<div class="modal" id="faqModal">
+  <div class="modal-content faq-modal-content">
+    <span class="close" onclick="closeFaqModal()">&times;</span>
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaqAnswer(this)">What is Roometry?</button>
+        <div class="faq-answer">
+          Roometry is a curated NFT collection of isometric digital rooms, each with unique stories and vibes.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaqAnswer(this)">How can I buy a Roometry NFT?</button>
+        <div class="faq-answer">
+          You can purchase Roometry NFTs on OpenSea. Just click the “Buy on OpenSea” button next to each NFT.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaqAnswer(this)">Who is the creator?</button>
+        <div class="faq-answer">
+          The collection is created by ETMFT, a digital artist passionate about isometric art and storytelling.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaqAnswer(this)">Are there more rooms coming?</button>
+        <div class="faq-answer">
+          Yes! Roometry is an ever-expanding universe. New rooms are added regularly.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+</body>
+</html>

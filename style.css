@@ -1,0 +1,1202 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0a0a0a;
+      color: #fff;
+      overflow-x: hidden;
+    }
+	
+ .loader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  z-index: 9999;
+  display: none !important;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1s ease, visibility 1s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+.hide-loader {
+  opacity: 0;
+  visibility: hidden;
+}
+
+    .loader img {
+      width: 120px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.7; }
+    }
+    .main-content {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+	
+	header {
+  height: 70px;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 140px;
+  max-height: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 500;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+    header h1 {
+      font-size: 1.5rem;
+    }
+    section {
+      padding: 6rem 2rem 4rem;
+      max-width: 960px;
+      margin: auto;
+      text-align: center;
+    }
+	
+	#stars-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: -1;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.content {
+  margin-top: 105px; /* هر چقدر خواستی */
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.15; /* یا بیشتر یا کمتر، بستگی به وضوح بخوای */
+  z-index: -1;
+}
+
+
+/* انیمیشن گرادیانت */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+    .hero h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      animation: fadeInUp 1.2s ease forwards;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+      animation: fadeInUp 2s ease forwards;
+    }
+.new-nfts {
+  padding: 2rem;
+  background-color: transparent;
+  border-radius: 12px;
+  margin: 2rem auto; /* تغییر به auto برای وسط‌چین */
+  max-width: 960px; /* محدود کردن عرض */
+  text-align: center;
+  margin-top: 6rem;
+}
+    .new-nfts h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+.nft-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* سه ستون هم‌اندازه */
+    gap: 40px; /* فاصله بین آیتم‌ها */
+	row-gap: 30px; /* فاصله بین ردیف‌ها */
+    justify-items: center; /* وسط‌چین کردن آیتم‌ها */
+    align-items: start; /* تنظیم آیتم‌ها از بالا */
+}
+    .nft-item {
+      text-align: center;
+      max-width: 300px;
+    }
+    .nft-item img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.4s;
+    }
+    .nft-item img:hover {
+      transform: scale(1.05);
+    }
+    .nft-item h3 {
+      font-size: 1.5rem;
+      margin: 1rem 0 0.5rem;
+    }
+    .nft-item p {
+      font-size: 1rem;
+      opacity: 0.8;
+      margin-bottom: 0.5rem;
+    }
+    .nft-item .price {
+      font-weight: bold;
+      color: #1e90ff;
+    }
+	
+    @keyframes fadeInUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .gallery {
+      display: grid;
+	  margin-top: 30px;  /* فاصله از بالا */
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      transition: transform 0.4s, box-shadow 0.4s;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+	
+	@media (max-width: 768px) {
+    .nft-grid {
+        grid-template-columns: 1fr; /* یک ستون در موبایل */
+    }
+
+    .nft-item {
+        width: 100%; /* آیتم‌ها بزرگ‌تر بشن */
+    }
+}
+
+	
+.nft-item, .gallery img {
+  animation: slideIn 0.8s ease forwards; /* انیمیشن ورود */
+  animation-delay: calc(var(--i) * 0.2s); /* تاخیر برای هر آیتم */
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.nft-item {
+  perspective: 1000px; /* ایجاد فضای سه‌بعدی */
+  position: relative;
+  transition: transform 0.4s ease;
+}
+
+.nft-item img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform-style: preserve-3d; /* فعال کردن رندر سه‌بعدی */
+}
+
+.nft-item:hover img {
+  transform: rotateX(10deg) rotateY(10deg) translateZ(20px); /* چرخش و بلند شدن 3D */
+  box-shadow: 0 12px 24px rgba(30, 144, 255, 0.5); /* سایه قوی‌تر برای حس عمق */
+  filter: brightness(1.1); /* حفظ روشنایی برای جذابیت */
+}
+
+
+.button, .buy-button {
+  background: linear-gradient(135deg, #1e90ff, #6a0dad); /* گرادیانت آبی به بنفش */
+  color: #fff; /* متن سفید */
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 15px rgba(30, 144, 255, 0.3); /* سایه نرم */
+}
+
+.button:hover, .buy-button:hover {
+  background: linear-gradient(135deg, #147cd1, #5a0dab); /* گرادیانت تیره‌تر برای هاور */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(30, 144, 255, 0.5); /* سایه قوی‌تر */
+}
+
+/* استایل اصلی دکمه‌ها */
+.button, .buy-button {
+  background: linear-gradient(135deg, #1e90ff, #6a0dad);
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 15px rgba(30, 144, 255, 0.3);
+}
+
+.button:hover, .buy-button:hover {
+  background: linear-gradient(135deg, #147cd1, #5a0dab);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(30, 144, 255, 0.5);
+}
+
+/* افکت درخشان فقط برای buy-button */
+.buy-button {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.buy-button::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, red, yellow, lime, cyan, blue, magenta, red);
+    animation: glowing 4s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    filter: blur(30px);
+    z-index: -1;
+}
+
+.buy-button:hover::after {
+    opacity: 1;
+}
+
+@keyframes glowing {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+    .community {
+      padding: 4rem 2rem;
+      background-color: transparent;
+    }
+    .community h2 {
+      margin-bottom: 2rem;
+    }
+    .newsletter {
+      padding: 4rem 2rem;
+      background-color: transparent;
+      text-align: center;
+    }
+    .newsletter h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #1e90ff;
+    }
+    .newsletter p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+      margin-bottom: 2rem;
+    }
+    .newsletter-form {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .newsletter-form input {
+      padding: 0.8rem;
+      font-size: 1rem;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      flex: 1;
+    }
+    .newsletter-form input::placeholder {
+      color: #777;
+    }
+    .newsletter-form button {
+      padding: 0.8rem 2rem;
+      background-color: #1e90ff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .newsletter-form button:hover {
+      background-color: #147cd1;
+    }
+    footer {
+      padding: 3rem 2rem;
+      background-color: #111;
+      color: #777;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .footer-column h4 {
+      color: #fff;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    .footer-column a {
+      color: #777;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+    .footer-column a:hover {
+      color: #1e90ff;
+    }
+    .footer-column p {
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+    video.bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.15;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 10000;
+      overflow-y: auto;
+    }
+    .modal-content {
+      background-color: #1a1a1a;
+      margin: 5% auto;
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 800px;
+      position: relative;
+      color: #fff;
+    }
+    .close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    .close:hover {
+      color: #1e90ff;
+    }
+    @media (max-width: 768px) {
+      .new-nfts {
+        padding: 1rem;
+      }
+      .nft-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      .nft-item {
+        max-width: 100%;
+      }
+      .newsletter-form {
+        flex-direction: column;
+      }
+      .newsletter-form input,
+      .newsletter-form button {
+        width: 100%;
+      }
+      footer {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+      .new-nfts h2 {
+        font-size: 1.5rem;
+      }
+      .newsletter h2 {
+        font-size: 1.8rem;
+      }
+    }
+	.buy-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #1e90ff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.buy-button:hover {
+  background-color: #147cd1;
+  transform: translateY(-2px);
+}
+.social-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@media (max-width: 768px) {
+  .social-links {
+    justify-content: center;
+  }
+  .footer-column {
+    text-align: center;
+  }
+}
+
+.social-icon {
+  width: 32x; /* بزرگ‌تر کردن آیکون */
+  height: 32px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: grayscale(50%) brightness(0.8);
+}
+
+.social-icon:hover {
+  transform: scale(1.2) rotate(5deg);
+  filter: none;
+}
+
+/* اختصاصی برای دیسکورد */
+.discord-icon:hover {
+  box-shadow: 0 0 10px #5865F2;
+  border-radius: 8px;
+}
+
+.footer-column a {
+  display: inline-block; /* جلوگیری از بلاک شدن لینک‌ها */
+  margin: 0; /* حذف حاشیه‌های اضافی */
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hamburger {
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* منوی همبرگری از چپ */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 70%;
+  max-width: 300px;
+  height: 100vh;
+  background-color: #111;
+  transition: left 0.4s ease;
+  padding: 4rem 2rem;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+}
+
+.mobile-menu.active {
+  left: 0;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.mobile-menu ul li {
+  margin: 1rem 0;
+}
+
+.mobile-menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.mobile-menu ul li a:hover {
+  color: #1e90ff;
+}
+
+.view-opensea {
+  display: inline-block;
+  margin-top: 1.5rem; /* فاصله بین متن و دکمه */
+}
+
+.mode-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s;
+  margin-left: 1rem;
+}
+
+body.light-mode {
+  background-color: #fff;
+  color: #000;
+}
+
+body.light-mode .mode-toggle {
+  color: #000;
+}
+
+body.light-mode .hero {
+  color: #000;
+}
+
+body.light-mode #stars-bg canvas {
+  background-color: #fff !important;
+}
+
+.discord-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #5865F2, #404EED); /* رنگ برند دیسکورد */
+  color: #fff;
+  font-weight: bold;
+  padding: 0.9rem 1.6rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  box-shadow: 0 4px 20px rgba(88,101,242,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.discord-button:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 30px rgba(88,101,242,0.6);
+}
+
+.discord-icon {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 0 3px rgba(0,0,0,0.3));
+  transition: transform 0.3s ease;
+}
+
+.discord-button:hover .discord-icon {
+  transform: rotate(10deg) scale(1.1);
+}
+.roadmap {
+  background-color: #0a0a0a;
+  color: #f0f0f0;
+  padding: 50px 15px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.roadmap h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #00fff7;
+  text-shadow: 0 0 8px #00fff7aa;
+}
+
+.step {
+  margin-bottom: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  border-left: 4px solid #00fff7;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+}
+
+.step h3 {
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.step p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #cccccc;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05); /* بسیار شفاف */
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  padding: 20px 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 🌙 استایل دارک مود */
+body.dark-mode .glass {
+  background: rgba(255, 255, 255, 0.05);
+  color: #eee;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .step h3 {
+  color: #fff;
+}
+
+body.dark-mode .step p {
+  color: #ccc;
+}
+
+/* ☀️ استایل لایت مود */
+body.light-mode .glass {
+  background: rgba(255, 255, 255, 0.7);
+  color: #222;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .step h3 {
+  color: #333;
+}
+
+body.light-mode .step p {
+  color: #666;
+}
+
+/* تار کردن پس‌زمینه هنگام باز بودن مدال */
+#modal-blur {
+  display: none;
+  position: fixed;
+  z-index: 998;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(8px) brightness(0.7);
+  background: rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+/* مدال Team */
+#teamModal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+#teamModal.active {
+  display: flex;
+}
+#modal-blur.active {
+  display: block;
+}
+.team-modal-content {
+  display: flex;
+  justify-content: center; /* وسط‌چین کردن اعضا */
+  gap: 24px; /* فاصله بین اعضا */
+  flex-wrap: wrap; /* اگر صفحه کوچیک شد، بچینه زیر هم */
+  padding: 32px 28px 24px 28px;
+  background: #181a20;
+  color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  max-width: 800px; /* یا هر عرضی که میخوای */
+  margin: auto;
+  position: relative;
+  animation: popIn 0.3s;
+}
+
+}
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.team-profile-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 18px;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+#teamModal .close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+#teamModal .close:hover {
+  opacity: 1;
+}
+
+/* مدال FAQ بزرگ‌تر */
+.faq-modal-content {
+  background: #181a20;
+  color: #fff;
+  border-radius: 18px;
+  padding: 38px 32px 28px 32px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  text-align: left;
+  max-width: 540px;
+  width: 95vw;
+  margin: auto;
+  position: relative;
+  animation: popIn 0.3s;
+}
+.faq-list {
+  margin-top: 24px;
+}
+.faq-item {
+  margin-bottom: 18px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 16px 18px;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.2s;
+  position: relative;
+}
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 18px;
+  font-size: 22px;
+  transition: transform 0.2s;
+}
+.faq-item.active .faq-question::after {
+  content: '-';
+  transform: rotate(180deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background: rgba(255,255,255,0.06);
+  color: #e0e0e0;
+  font-size: 16px;
+  padding: 0 18px;
+  transition: max-height 0.3s cubic-bezier(.4,0,.2,1), padding 0.3s;
+}
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 12px 18px 18px 18px;
+}
+
+/* فایل: style.css */
+.modal { display: none; /* پیش‌فرض مخفی */ }
+.modal.active { display: flex; }
+
+/* فایل: style.css */
+.social-mobile {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 18px;
+}
+.social-mobile a img {
+  filter: brightness(0.95);
+  transition: filter 0.2s;
+}
+.social-mobile a img:hover {
+  filter: brightness(1.2);
+}
+
+.hero .content {
+  text-align: center;
+}
+
+.hero .title {
+  display: inline-block;
+  position: relative;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: #fff;
+  background: none;
+  margin: 0 auto;
+  z-index: 1;
+  line-height: 1.1;
+  padding: 0.2em 0.8em;
+  /* برای جلوگیری از کشیدگی aurora */
+  overflow: visible;
+}
+
+.hero .aurora {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 120%; height: 120%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero .aurora__item {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  filter: blur(2.5rem);
+  opacity: 0.7;
+  mix-blend-mode: lighten;
+  animation: aurora-border 6s ease-in-out infinite;
+}
+
+.hero .aurora__item:nth-of-type(1) {
+  background: #00c2ff;
+  top: 10%; left: 10%;
+  animation: aurora-border 6s ease-in-out infinite, aurora-1 12s ease-in-out infinite alternate;
+}
+.hero .aurora__item:nth-of-type(2) {
+  background: #ffc640;
+  top: 30%; right: 0;
+  animation: aurora-border 6s ease-in-out infinite, aurora-2 12s ease-in-out infinite alternate;
+}
+.hero .aurora__item:nth-of-type(3) {
+  background: #fff;
+  bottom: 0; left: 20%;
+  animation: aurora-border 6s ease-in-out infinite, aurora-3 8s ease-in-out infinite alternate;
+}
+.hero .aurora__item:nth-of-type(4) {
+  background: #e54cff;
+  bottom: 10%; right: 10%;
+  animation: aurora-border 6s ease-in-out infinite, aurora-4 24s ease-in-out infinite alternate;
+}
+
+@keyframes aurora-1 {
+  0% { top: 10%; left: 10%; }
+  50% { top: 60%; left: 60%; }
+  100% { top: 10%; left: 10%; }
+}
+@keyframes aurora-2 {
+  0% { top: 30%; right: 0; }
+  50% { top: 60%; right: 40%; }
+  100% { top: 30%; right: 0; }
+}
+@keyframes aurora-3 {
+  0% { bottom: 0; left: 20%; }
+  50% { bottom: 40%; left: 60%; }
+  100% { bottom: 0; left: 20%; }
+}
+@keyframes aurora-4 {
+  0% { bottom: 10%; right: 10%; }
+  50% { bottom: 40%; right: 40%; }
+  100% { bottom: 10%; right: 10%; }
+}
+@keyframes aurora-border {
+  0% { border-radius: 50%; }
+  50% { border-radius: 40% 60% 70% 30% / 30% 70% 40% 60%; }
+  100% { border-radius: 50%; }
+}
+
+.hero .content {
+  text-align: center;
+}
+
+.hero .title {
+  white-space: nowrap;
+  font-size: clamp(2rem, 7vw, 4.5rem);
+  font-family: 'Inter', 'DM Sans', Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: -2px;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(90deg, #00c2ff, #fff, #ffc640, #e54cff);
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  animation: aurora-gradient-move 4s linear infinite alternate;
+  display: inline-block;
+}
+
+@keyframes aurora-gradient-move {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.hero .subtitle {
+  color: #fff;
+  opacity: 0.7;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.hero .button {
+  margin-top: 32px; /* مقدار را به دلخواه تغییر بده، مثلاً 24px یا 40px */
+  display: inline-block;
+}
+
+body.light-mode .hero .subtitle {
+  color: #333 !important;  /* یا هر رنگی که در لایت مود دوست داری */
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+}
+
+.text-generate-effect {
+  font-weight: bold;
+  font-size: clamp(1.6rem, 5vw, 2.8rem); /* فونت بزرگ‌تر */
+  color: #fff; /* رنگ سفید خالص */
+  line-height: 1.8; /* فاصله خطوط برای خوانایی */
+  letter-spacing: 0.04em;
+  margin: 3rem auto; /* حاشیه برای وسط‌چین بهتر */
+  padding: 1rem 2rem; /* پدینگ برای باکس تیره */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px; /* عرض بیشتر برای پر کردن صفحه */
+  width: 95vw; /* تنظیم برای صفحه‌های مختلف */
+  text-align: center;
+  word-break: break-word;
+  position: relative;
+  background: rgba(0, 0, 0, 0.7); /* پس‌زمینه مشکی نیمه‌شفاف */
+  border-radius: 12px; /* گوشه‌های گرد */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); /* سایه تیره برای عمق */
+  backdrop-filter: blur(8px); /* افکت شیشه‌ای تیره */
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.text-generate-effect span {
+  opacity: 0;
+  transform: translateY(30px); /* شروع از پایین */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  margin: 0 0.25em 0.4em 0.25em; /* فاصله بین کلمات */
+  display: inline-block;
+  font-size: inherit;
+  white-space: pre-wrap;
+  color: #fff; /* سفید برای هر کلمه */
+}
+
+.text-generate-effect span.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.text-generate-effect {
+  font-family: "Inter", sans-serif;
+  font-weight: 600; /* یا 700 برای Bold */
+  font-style: normal;
+  font-optical-sizing: auto;
+}
+
+.team-modal-content {
+  display: block !important; /* مهم! flex یا grid رو غیرفعال می‌کنیم */
+}
+
+.team-member {
+  text-align: left;
+  margin-bottom: 16px;
+  padding: 10px;
+  background-color: #1e1e1e;
+  color: white;
+  border-radius: 8px;
+}
+
+.team-member img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.team-member h3 {
+  margin: 8px 0 4px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.team-member p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.live-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #32cd32; /* قرمز لایو */
+  border-radius: 50%;
+  margin-right: 8px;
+  position: relative;
+  animation: liveBlink 1.5s infinite;
+  box-shadow: 0 0 8px #32cd32;
+}
+
+@keyframes liveBlink {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 8px #32cd32;
+  }
+  50% {
+    opacity: 0.3;
+    box-shadow: 0 0 2px #32cd32;
+  }
+}
+
+.bg-image {
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateY(30px); /* برای fade-up */
+  width: 250px;
+  opacity: 0; /* اولش ناپیدا باشه */
+  z-index: 1;
+  animation: fadeUp 2s ease-out forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0); /* برگرده سرجاش */
+  }
+}
+
+@keyframes rainbowGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.featured-title {
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: 'Arial', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  background: linear-gradient(270deg, #1e90ff, #ff6ec4, #ffe600, #1e90ff);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: rainbowGradient 6s ease infinite;
+}
