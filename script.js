@@ -5,8 +5,15 @@ window.addEventListener('DOMContentLoaded', () => {
     captchaModal.style.display = 'flex';
     document.body.style.overflow = 'hidden'; // غیرفعال کردن اسکرول
   }
-  
-  // تابع callback برای موفقیت کپچا
+
+  // مخفی کردن لودر پس از 3 ثانیه
+  setTimeout(() => {
+    const loader = document.querySelector('.loader');
+    if (loader) loader.classList.add('hide-loader');
+  }, 3000);
+});
+
+// تابع callback برای موفقیت کپچا
 function onCaptchaSuccess(response) {
   if (response) {
     const captchaModal = document.getElementById('captchaModal');
@@ -19,33 +26,25 @@ function onCaptchaSuccess(response) {
   }
 }
 
-  const mainContent = document.querySelector('.main-content');
-  if (mainContent) mainContent.style.opacity = '1';
+// مدیریت کلیک برای مودال‌های دیگر
+document.addEventListener('click', (e) => {
+  if (e.target.classList.contains('modal') || e.target.classList.contains('close')) {
+    document.getElementById('aboutModal').style.display = 'none';
+    document.getElementById('termsModal').style.display = 'none';
+    document.getElementById('privacyModal').style.display = 'none';
+  }
 });
 
-    // مدیریت کلیک برای مودال‌ها
-    document.addEventListener('click', (e) => {
-      if (e.target.classList.contains('modal') || e.target.classList.contains('close')) {
-        document.getElementById('aboutModal').style.display = 'none';
-        document.getElementById('termsModal').style.display = 'none';
-        document.getElementById('privacyModal').style.display = 'none';
-      }
-    });
-  
-
-
-  function toggleMenu() {
-    const menu = document.querySelector('.mobile-menu');
-    const burger = document.querySelector('.hamburger');
-    menu.classList.toggle('active');
-    burger.classList.toggle('active');
-  }
-  
-// ...existing code...
+function toggleMenu() {
+  const menu = document.querySelector('.mobile-menu');
+  const burger = document.querySelector('.hamburger');
+  menu.classList.toggle('active');
+  burger.classList.toggle('active');
+}
 
 particlesJS("stars-bg", {
   "particles": {
-    "number": { "value": 10 }, // هر تعدادی که می‌خواهی اینجا بگذار
+    "number": { "value": 10 },
     "size": { "value": 2 },
     "color": { "value": "#ffffff" },
     "move": { "speed": 0.3 },
@@ -63,21 +62,25 @@ function openTeamModal() {
   document.getElementById('modal-blur').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
+
 function closeTeamModal() {
   document.getElementById('teamModal').classList.remove('active');
   document.getElementById('modal-blur').classList.remove('active');
   document.body.style.overflow = '';
 }
+
 function openFaqModal() {
   document.getElementById('faqModal').classList.add('active');
   document.getElementById('modal-blur').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
+
 function closeFaqModal() {
   document.getElementById('faqModal').classList.remove('active');
   document.getElementById('modal-blur').classList.remove('active');
   document.body.style.overflow = '';
 }
+
 const modalBlur = document.getElementById('modal-blur');
 if (modalBlur) {
   modalBlur.onclick = function() {
@@ -92,24 +95,22 @@ function toggleFaqAnswer(btn) {
   item.classList.toggle('active');
 }
 
-
 document.addEventListener("DOMContentLoaded", function() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // فقط یکبار اجرا شود
+        observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.15 });
 
-  // برای کارت‌های NFT جدید و گالری
   document.querySelectorAll('.nft-item, .gallery a').forEach(el => {
     observer.observe(el);
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
   const words = document.querySelectorAll('.text-generate-effect span');
   const textContainer = document.querySelector('.text-generate-effect');
 
@@ -127,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
     words.forEach((word, i) => {
-      const wordProgress = i / (words.length - 1); // موقعیت هر کلمه
+      const wordProgress = i / (words.length - 1);
       if (scrollProgress >= wordProgress) {
         word.classList.add('visible');
       } else {
