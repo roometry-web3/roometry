@@ -324,53 +324,7 @@ header {
     .community h2 {
       margin-bottom: 2rem;
     }
-    .newsletter {
-      padding: 4rem 2rem;
-      background-color: transparent;
-      text-align: center;
-    }
-    .newsletter h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #1e90ff;
-    }
-    .newsletter p {
-      font-size: 1.2rem;
-      opacity: 0.8;
-      margin-bottom: 2rem;
-    }
-    .newsletter-form {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-    .newsletter-form input {
-      padding: 0.8rem;
-      font-size: 1rem;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      flex: 1;
-    }
-    .newsletter-form input::placeholder {
-      color: #777;
-    }
-    .newsletter-form button {
-      padding: 0.8rem 2rem;
-      background-color: #1e90ff;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    .newsletter-form button:hover {
-      background-color: #147cd1;
-    }
+
     footer {
       padding: 3rem 2rem;
       background-color: #111;
